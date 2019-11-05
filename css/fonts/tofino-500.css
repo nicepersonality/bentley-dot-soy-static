@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Tofino";
+  src: url("Tofino-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Tofino";
+  src: url("Tofino-MediumItalic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 500;
+}
