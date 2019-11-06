@@ -1,0 +1,9 @@
+@import url('fonts/tofino-300.css');
+
+body {
+  font-family: 'Tofino', -apple-system, system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+}
