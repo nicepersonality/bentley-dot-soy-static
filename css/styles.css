@@ -24,7 +24,7 @@ header {
 }
 main > section {
   margin: 0;
-  padding: var(--lh-half) var(--lh) var(--lh);
+  padding: var(--lh);
 }
 footer {
   margin: 0;
