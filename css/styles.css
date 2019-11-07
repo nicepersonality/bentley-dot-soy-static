@@ -56,14 +56,14 @@ footer {
     --text-subtle: hsl(15, 10%, 50%);
     --accent-color: hsl(195, 100%, 67%);
     --accent-subtle: hsl(195, 67%, 33%);
-    --rainbow-1: hsl( 15, 50%, 10%);
-    --rainbow-2: hsl( 60, 50%, 10%);
-    --rainbow-3: hsl(105, 50%, 10%);
-    --rainbow-4: hsl(150, 50%, 10%);
-    --rainbow-5: hsl(195, 50%, 10%);
-    --rainbow-6: hsl(240, 50%, 10%);
-    --rainbow-7: hsl(285, 50%, 10%);
-    --rainbow-8: hsl(330, 50%, 10%);
+    --rainbow-1: hsl( 15, 75%, 15%);
+    --rainbow-2: hsl( 60, 75%, 15%);
+    --rainbow-3: hsl(105, 75%, 15%);
+    --rainbow-4: hsl(150, 75%, 15%);
+    --rainbow-5: hsl(195, 75%, 15%);
+    --rainbow-6: hsl(240, 75%, 15%);
+    --rainbow-7: hsl(285, 75%, 15%);
+    --rainbow-8: hsl(330, 75%, 15%);
   }
 }
 
@@ -207,28 +207,28 @@ main p + p {
 main > section {
   box-shadow: 0 -0 var(--lh-half) var(--text-subtle);
 }
-main > section:nth-child(1) {
+main > section:nth-child(8n + 1) {
   background-color: var(--rainbow-1);
 }
-main > section:nth-child(2) {
+main > section:nth-child(8n + 2) {
   background-color: var(--rainbow-2);
 }
-main > section:nth-child(3) {
+main > section:nth-child(8n + 3) {
   background-color: var(--rainbow-3);
 }
-main > section:nth-child(4) {
+main > section:nth-child(8n + 4) {
   background-color: var(--rainbow-4);
 }
-main > section:nth-child(5) {
+main > section:nth-child(8n + 5) {
   background-color: var(--rainbow-5);
 }
-main > section:nth-child(6) {
+main > section:nth-child(8n + 6) {
   background-color: var(--rainbow-6);
 }
-main > section:nth-child(7) {
+main > section:nth-child(8n + 7) {
   background-color: var(--rainbow-7);
 }
-main > section:nth-child(8) {
+main > section:nth-child(8n) {
   background-color: var(--rainbow-8);
 }
 
