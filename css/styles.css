@@ -161,6 +161,14 @@ header ul {
 header .social a {
   display: block;
   padding: var(--lh-half);
+  border-radius: var(--lh);
+}
+header .social a:active, 
+header .social a:focus, 
+header .social a:hover {
+  color: var(--bg-color);
+  background-color: var(--accent-color);
+  box-shadow: 0 0 var(--lh-half) var(--accent-subtle);
 }
 header .social a i {
   display: block;
