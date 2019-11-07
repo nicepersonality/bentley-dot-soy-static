@@ -1,9 +1,217 @@
+@import url('fonts/tofino-200.css');
 @import url('fonts/tofino-300.css');
+@import url('fonts/tofino-500.css');
+@import url('fonts/tofino-800.css');
 
+/* basic block formatting */
+:root {
+  --lh: 1.5rem;
+  --fs: 1.125rem;
+  --lh-half: calc(var(--lh) / 2);
+  --lh-double: calc(var(--lh) * 2);
+  --fs-double: calc(var(--fs) * 2);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+}
+header {
+  padding: var(--lh-half) var(--lh);
+}
+main > section {
+  margin: 0;
+  padding: var(--lh-half) var(--lh);
+}
+footer {
+  margin: 0;
+  padding: var(--lh-half) var(--lh);
+}
+
+/* color palette */
+:root {
+  --bg-color: #fff;
+  --bg-subtle: #eed;
+  --text-color: #332;
+  --text-subtle: #776;
+  --accent-color: #069;
+  --accent-subtle: #bde;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #000;
+    --bg-subtle: #110;
+    --text-color: #ccb;
+    --text-subtle: #776;
+    --accent-color: #9fc;
+    --accent-subtle: #096;
+  }
+}
+
+
+/* typography */
 body {
   font-family: 'Tofino', -apple-system, system-ui, sans-serif;
   font-weight: 300;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: var(--fs);
+  line-height: var(--lh);
   text-rendering: optimizeLegibility;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+h1 {
+  font-size: calc(var(--fs) + var(--lh));
+  line-height: var(--lh-double);
+  font-weight: 800;
+  color: var(--accent-color);
+}
+h2 {
+  font-size: calc(var(--fs) + var(--lh-half));
+  font-weight: 200;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-subtle);
+}
+.dek {
+  font-size: var(--lh);
+  font-weight: 200;
+}
+p {
+  max-width: calc(30 * var(--fs));
+}
+h2 + p,
+p + p {
+  margin-top: var(--lh);
+}
+ul {
+  margin: var(--lh-half) 0;
+}
+b, strong {
+  font-weight: 500;
+}
+a {
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--accent-color);
+}
+a:active,
+a:focus,
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-subtle);
+  text-decoration-width: 1px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-skip: skip;
+  text-decoration-skip-ink: auto;
+}
+
+/* header styles */
+header > * {
+  margin: 0 auto var(--lh);
+}
+header h1,
+header .dek,
+header ul {
+  text-align: center;
+}
+header .headshot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 24vmin;
+  height: 24vmin;
+  border-radius: 12vmin;
+  overflow: hidden;
+}
+header .headshot img {
+  display: block;
+  width: 150%;
+}
+header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+}
+header .social a {
+  display: block;
+  padding: var(--lh-half);
+}
+header .social a i {
+  display: block;
+}
+header .social a i svg {
+  display: block;
+  width: var(--lh);
+  height: var(--lh);
+}
+header .social a span {
+  position: absolute;
+  left: -999em;
+  display: block;
+  width: 0;
+  overflow: hidden;
+}
+header .contact {
+  padding-left: var(--lh-double);
+}
+
+/* main content styles */
+main {
+  background-color: var(--bg-subtle);
+}
+main h2 {
+  text-align: center;
+}
+main p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* grid for desktop */
+@media screen and (min-width: 45em) {
+  body {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-gap: 0;
+    grid-template:
+      "header main" 1fr
+      "footer main" auto
+    / minmax(22rem, 2fr) 3fr;
+  }
+  header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  header > * {
+    margin: 0 auto;
+  }
+  main {
+    grid-area: main;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+  footer {
+    grid-area: footer;
+  }
+}
+
+/* motion */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
 }
