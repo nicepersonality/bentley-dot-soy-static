@@ -33,37 +33,41 @@ footer {
 
 /* color palette */
 :root {
-  --bg-color: hsl(15, 5%, 100%);
-  --bg-subtle: hsl(15, 33%, 90%);
-  --text-color: hsla(15, 15%, 10%, 0.875);
-  --text-subtle: hsla(15, 10%, 33%, 0.75);
+  --bg-color: hsl(75, 5%, 100%);
+  --bg-subtle: hsl(75, 33%, 90%);
+  --text-color: hsla(75, 15%, 10%, 0.875);
+  --text-subtle: hsla(75, 10%, 33%, 0.75);
   --accent-color: hsl(195, 100%, 33%);
   --accent-subtle: hsl(195, 67%, 50%);
-  --rainbow-1: hsl( 15, 33%, 90%);
-  --rainbow-2: hsl( 60, 33%, 90%);
-  --rainbow-3: hsl(105, 33%, 90%);
-  --rainbow-4: hsl(150, 33%, 90%);
+  --rainbow-1: hsl( 35, 33%, 90%);
+  --rainbow-2: hsl( 75, 33%, 90%);
+  --rainbow-3: hsl(115, 33%, 90%);
+  --rainbow-4: hsl(155, 33%, 90%);
   --rainbow-5: hsl(195, 33%, 90%);
-  --rainbow-6: hsl(240, 33%, 90%);
-  --rainbow-7: hsl(285, 33%, 90%);
-  --rainbow-8: hsl(330, 33%, 90%);
+  --rainbow-6: hsl(235, 33%, 90%);
+  --rainbow-7: hsl(275, 33%, 90%);
+  --rainbow-8: hsl(315, 33%, 90%);
+  --rainbow-9: hsl(355, 33%, 90%);
+  --shadow: var(--text-subtle);
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: hsl(15, 5%, 0%);
-    --bg-subtle: hsl(15, 33%, 10%);
-    --text-color: hsl(15, 15%, 80%);
-    --text-subtle: hsl(15, 10%, 50%);
+    --bg-color: hsl(75, 5%, 0%);
+    --bg-subtle: hsl(75, 33%, 10%);
+    --text-color: hsl(75, 15%, 80%);
+    --text-subtle: hsl(75, 10%, 50%);
     --accent-color: hsl(195, 100%, 67%);
     --accent-subtle: hsl(195, 67%, 33%);
-    --rainbow-1: hsl( 15, 75%, 15%);
-    --rainbow-2: hsl( 60, 75%, 15%);
-    --rainbow-3: hsl(105, 75%, 15%);
-    --rainbow-4: hsl(150, 75%, 15%);
+    --rainbow-1: hsl( 35, 75%, 15%);
+    --rainbow-2: hsl( 75, 75%, 15%);
+    --rainbow-3: hsl(115, 75%, 15%);
+    --rainbow-4: hsl(155, 75%, 15%);
     --rainbow-5: hsl(195, 75%, 15%);
-    --rainbow-6: hsl(240, 75%, 15%);
-    --rainbow-7: hsl(285, 75%, 15%);
-    --rainbow-8: hsl(330, 75%, 15%);
+    --rainbow-6: hsl(235, 75%, 15%);
+    --rainbow-7: hsl(275, 75%, 15%);
+    --rainbow-8: hsl(315, 75%, 15%);
+    --rainbow-9: hsl(355, 75%, 15%);
+    --shadow: var(--bg-subtle);
   }
 }
 
@@ -142,10 +146,9 @@ header .headshot {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  width: 24vmin;
-  height: 24vmin;
-  border-radius: 12vmin;
+  width: 36vmin;
+  height: 36vmin;
+  border-radius: 18vmin;
   overflow: hidden;
 }
 header .headshot img {
@@ -205,31 +208,34 @@ main p + p {
   margin-top: var(--lh);
 }
 main > section {
-  box-shadow: 0 -0 var(--lh-half) var(--text-subtle);
+  box-shadow: 0 -0 var(--lh-half) var(--shadow);
 }
-main > section:nth-child(8n + 1) {
+main > section:nth-child(9n + 1) {
   background-color: var(--rainbow-1);
 }
-main > section:nth-child(8n + 2) {
+main > section:nth-child(9n + 2) {
   background-color: var(--rainbow-2);
 }
-main > section:nth-child(8n + 3) {
+main > section:nth-child(9n + 3) {
   background-color: var(--rainbow-3);
 }
-main > section:nth-child(8n + 4) {
+main > section:nth-child(9n + 4) {
   background-color: var(--rainbow-4);
 }
-main > section:nth-child(8n + 5) {
+main > section:nth-child(9n + 5) {
   background-color: var(--rainbow-5);
 }
-main > section:nth-child(8n + 6) {
+main > section:nth-child(9n + 6) {
   background-color: var(--rainbow-6);
 }
-main > section:nth-child(8n + 7) {
+main > section:nth-child(9n + 7) {
   background-color: var(--rainbow-7);
 }
-main > section:nth-child(8n) {
+main > section:nth-child(9n + 8) {
   background-color: var(--rainbow-8);
+}
+main > section:nth-child(9n) {
+  background-color: var(--rainbow-9);
 }
 
 /* footer styles */
@@ -258,7 +264,12 @@ footer .copyright {
   header > * {
     margin: 0 auto;
   }
-  main {
+  header .headshot {
+    width: 24vmin;
+    height: 24vmin;
+    border-radius: 12vmin;
+  }
+    main {
     grid-area: main;
     overflow-y: auto;
     scroll-behavior: smooth;
