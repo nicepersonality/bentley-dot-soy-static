@@ -150,6 +150,7 @@ header .headshot {
 header .headshot img {
   display: block;
   width: 150%;
+  height: auto;
 }
 header ul {
   display: flex;
